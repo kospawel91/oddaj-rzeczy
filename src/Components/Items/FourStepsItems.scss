@@ -1,0 +1,35 @@
+.fourItemContainer{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5rem;
+    background-color: $baseLight-color;
+    &-item{
+        padding:3rem;
+        width: 20%;
+        white-space: pre-line;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $baseDgray-color;
+    }
+
+    &-hr{
+      width: 40%;
+      border:transparent ;
+       border-top: 1px solid $baseDgray-color;
+       margin: 1rem 0;
+    }
+    &-name{
+        font-weight: 400;
+        font-size: $fSizeM;
+    }
+    &-text{
+        padding: 1rem 0;
+        font-size: $fSizeSm;
+        text-align: center;
+    }
+    &-image{
+        margin-bottom: 1rem;
+    }
+}

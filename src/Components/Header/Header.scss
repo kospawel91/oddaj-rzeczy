@@ -1,0 +1,74 @@
+.header {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap-reverse;
+  &-left {
+    flex: 1;
+    position: relative;
+  }
+  &-img {
+    position: absolute;
+    top: 0;
+    right: 20%;
+    height: 100%;
+  }
+  &-right {
+    flex: 1;
+    white-space: pre-line;
+  }
+}
+
+li {
+  list-style: none;
+}
+.header-right {
+  display: flex;
+  flex-direction: column;
+  &_wrapper {
+    padding: 3rem 15rem;
+  }
+
+  & .login-buttons {
+    display: flex;
+    justify-content: flex-end;
+    &-item {
+      padding: 0.5rem;
+      font-size: 1.4rem;
+      &:last-child {
+        margin-left: 1rem;
+        border: 1px solid $baseLgray-color;
+      }
+    }
+  }
+
+  & .navbar {
+    display: flex;
+    justify-content: flex-end;
+    &-item {
+      padding: 1rem 1rem;
+      font-size: $fSizeM;
+      white-space: nowrap;
+      &:first-child {
+        border: solid 1px $baseDgray-color;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.helping {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  padding: 0 7rem;
+  
+}
+.button-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+

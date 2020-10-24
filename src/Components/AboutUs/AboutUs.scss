@@ -1,0 +1,23 @@
+.about-us{
+    display: flex;
+    background-color: $baseLight-color;
+
+    &-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        &-signature{
+            align-self: flex-end;
+        }
+    }
+    &-right{
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        &-img{
+            width: 100%;
+        }
+    }
+}

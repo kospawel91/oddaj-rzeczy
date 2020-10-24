@@ -1,0 +1,15 @@
+.underline{
+      white-space: pre-line;
+      text-align: center;
+      &-h1{
+        font-size: 3.8rem;
+        letter-spacing: -0.76px;
+        font-weight: 300;
+        color: $baseDgray-color;
+        padding-bottom: 1rem;
+       
+      }
+      &-img{
+          padding-bottom:2rem;
+      }
+    }
