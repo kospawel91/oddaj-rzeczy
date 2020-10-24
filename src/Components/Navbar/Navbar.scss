@@ -1,0 +1,35 @@
+ .nav{
+     display: flex;
+     flex-direction: column;
+     padding: 4rem;
+ }
+ 
+.login-buttons {
+    display: flex;
+    justify-content: flex-end;
+    &-item {
+      padding: 0.5rem;
+      font-size: 1.4rem;
+      &:last-child {
+        margin-left: 1rem;
+        border: 1px solid $baseLgray-color;
+      }
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    &-item {
+      padding: 1rem 3rem;
+      font-size: $fSizeM;
+      white-space: nowrap;
+      &:first-child {
+        border: solid 1px $baseDgray-color;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+}
+  

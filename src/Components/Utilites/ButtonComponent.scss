@@ -1,4 +1,7 @@
 .button-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color:$baseDgray-color;
     font-weight: 300;
     width: 300px;

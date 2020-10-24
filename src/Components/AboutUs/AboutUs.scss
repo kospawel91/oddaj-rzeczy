@@ -1,23 +1,32 @@
-.about-us{
-    display: flex;
-    background-color: $baseLight-color;
+.about-us {
+  display: flex;
+  background-color: $baseLight-color;
 
-    &-left{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-        &-signature{
-            align-self: flex-end;
-        }
+  &-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color:$baseDgray-color;
+    &-text{
+        font-size: 3rem;
+        font-weight: 300;
+        letter-spacing: -0.6px;
+        padding:0 15rem
+        
     }
-    &-right{
-        display: flex;
-        justify-content: center;
-        flex: 1;
-        &-img{
-            width: 100%;
-        }
+    &-signature {
+      align-self: flex-end;
+      padding: 3rem 15rem;
     }
+  }
+  &-right {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    &-img {
+      width: 100%;
+    }
+  }
 }
