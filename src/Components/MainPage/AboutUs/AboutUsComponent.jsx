@@ -1,7 +1,7 @@
 import React from 'react';
-import UnderLineComponent from '../Utilites/UnderLineComponent';
-import signature from '../../assets/Signature.svg'
-import people from '../../assets/People.jpg'
+import UnderLineComponent from '../../Utilites/UnderLineComponent';
+import signature from '../../../assets/Signature.svg'
+import people from '../../../assets/People.jpg'
 
 const AboutUsComponent = () => {
     return (

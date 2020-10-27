@@ -1,9 +1,26 @@
  .nav{
-     display: flex;
-     flex-direction: column;
-     padding: 4rem;
- }
- 
+      display: flex;
+      flex-direction: column;
+  margin-right: 10rem;;
+      position: sticky;
+      top: 0rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      z-index: 29;
+    }
+//  .navBack{
+//    position: relative;
+//    &::after{
+//       content: "";
+//       position: absolute;
+//       top: -30px;
+//       right: -10rem;
+//       opacity: 0.2;
+//       background-color: grey; 
+//       height: 105px; 
+//       width: 120%;
+//     }
+//  }
 .login-buttons {
     display: flex;
     justify-content: flex-end;
@@ -20,16 +37,24 @@
 .navbar {
     display: flex;
     justify-content: flex-end;
-    &-item {
+    &-item  {
       padding: 1rem 3rem;
-      font-size: $fSizeM;
       white-space: nowrap;
-      &:first-child {
+
+      & .active {
         border: solid 1px $baseDgray-color;
+        padding: 1rem;
       }
       &:last-child {
         padding-right: 0;
       }
+   
+    & a{
+
+      font-size: $fSizeM;
+      white-space: nowrap;
+      
     }
+   }
 }
   

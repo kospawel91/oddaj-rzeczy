@@ -1,6 +1,6 @@
 import React from 'react';
-import ButtonComponent from '../Utilites/ButtonComponent';
-import UnderLineComponent from '../Utilites/UnderLineComponent';
+import ButtonComponent from '../../Utilites/ButtonComponent';
+import UnderLineComponent from '../../Utilites/UnderLineComponent';
 
 const StartHelpingComponent = () => {
 

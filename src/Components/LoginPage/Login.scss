@@ -1,0 +1,54 @@
+.login{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+ 
+    &-wraper{
+        background-color: $baseLight-color;
+        padding: 3rem;
+        margin: 5rem;
+        & .underline-h1{
+            font-size: 4rem;
+            font-weight: 500;
+            padding-bottom: 3rem;
+
+        }
+    }
+    &-container{
+        width: 60vw;
+        max-width: 600px;
+    }
+    &-pagebuttons{
+        display: flex;
+        justify-content: space-between;
+        
+       & .button-text{
+           width:15rem;
+           font-size: 2rem;
+           font-weight: 500;
+           white-space: nowrap;
+           padding:2rem;
+        &:first-child{
+            border: none;
+        }
+       } 
+    }
+    &-form{
+    display: flex;
+    flex-direction: column;
+    & label{
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+    & input {
+        margin-bottom: 2rem;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $baseDgray-color;
+        font-size: 2rem;
+    }
+}
+}
+
+
+

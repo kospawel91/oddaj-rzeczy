@@ -1,6 +1,6 @@
 import React from "react";
 import StartHelpingComponent from "./StartHelpingComponent";
-import homeHero from "../../assets/Home-Hero-Image.jpg"
+import homeHero from "../../../assets/Home-Hero-Image.jpg";
 
 const Header = () => {
   return (
@@ -10,8 +10,6 @@ const Header = () => {
       </div>
 
       <div className="header-right">
-        <div className="header-right_wrapper">
-        </div>
           <StartHelpingComponent />
       </div>
     </header>

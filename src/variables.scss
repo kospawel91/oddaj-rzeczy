@@ -1,17 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 10px;
-}
-html {
-  box-sizing: border-box;
-  
-}
-
-
 
 
 $baseLight-color: #F0F1F1;
@@ -29,3 +17,41 @@ $font-Merri:'Merriweather', serif;
 $fSizeSm:1.6rem;
 $fSizeM:1.8rem;
 $fSizeL:36rem;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+/* unvisited link */
+a:link {
+  color:inherit;
+}
+
+/* visited link */
+a:visited {
+  color:inherit;
+}
+
+/* mouse over link */
+a:hover {
+  color:inherit;
+}
+
+/* selected link */
+a:active {
+  color:inherit;
+}
+html {
+  box-sizing: border-box;
+}
+
+
+textarea:focus, input:focus{ border: none;outline: none;border-bottom: 1px solid $baseDgray-color; }
+
+
+

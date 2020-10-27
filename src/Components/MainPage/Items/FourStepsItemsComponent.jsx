@@ -1,8 +1,8 @@
 import React from 'react';
-import shirt from '../../assets/Icon-1.svg'
-import bag from '../../assets/Icon-2.svg'
-import magnifi from '../../assets/Icon-3.svg'
-import kurierOrder  from '../../assets/Icon-4.svg'
+import shirt from '../../../assets/Icon-1.svg'
+import bag from '../../../assets/Icon-2.svg'
+import magnifi from '../../../assets/Icon-3.svg'
+import kurierOrder  from '../../../assets/Icon-4.svg'
 
 const FourStepsItemsComponent = () => {
   const itemComponents = [

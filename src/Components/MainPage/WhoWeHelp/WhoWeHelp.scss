@@ -1,0 +1,59 @@
+.whowehelp{
+    padding:5rem 0;
+    &-buttons{
+        display: flex;
+        justify-content: center;
+        & .button-text{
+            padding:0.5rem 4rem;
+            font-size:2.4rem;
+            width: 200px;
+            white-space: pre-line;
+            text-transform: none;
+            margin:2rem;
+        }
+    }
+    &-wrapper{
+        display: flex;
+        justify-content: center;
+        font-size: 2.2rem;
+        width: 100%;
+        padding: 6rem;
+    }
+    &-text{
+        width: 50%;
+        font-size: 2.2rem;
+
+        
+    }
+}
+
+.organization-data{
+    display: flex;
+    justify-content: center;
+    &-list{
+        width: 60%;
+        &-item{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+.list-item-left{
+    & h1{
+        font-size: 3rem;
+    }
+    & p{
+        font-size: $fSizeM;
+    }
+}
+.list-item-right{
+    display: flex;
+    align-items: center;
+    & p{
+        font-size: $fSizeM;
+    }
+}

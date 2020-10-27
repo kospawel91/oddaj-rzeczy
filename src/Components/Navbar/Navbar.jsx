@@ -4,10 +4,12 @@ import NavbarComponent from "./NavbarComponent";
 
 const Navbar = () => {
     return (
-      <navbar className="nav">
-        <LoginComponent />
-        <NavbarComponent />
-      </navbar>
+      <section className="nav">
+        <div className="navBack">
+          <LoginComponent />
+          <NavbarComponent />
+        </div>
+      </section>
     );
 };
 

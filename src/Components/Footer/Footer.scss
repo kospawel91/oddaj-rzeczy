@@ -1,0 +1,17 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 10rem;
+    align-items: center;
+}
+
+.copyright{
+    font-size: $fSizeM;
+    font-weight: 500;
+    &-social{
+        position: absolute;
+        top: 3rem;
+        right: 5rem;
+    }
+}
