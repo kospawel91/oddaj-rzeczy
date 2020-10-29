@@ -2,61 +2,22 @@ import React,{useEffect, useState}from "react";
 import { Link } from "react-router-dom";
 import ButtonComponent from "../Utilites/ButtonComponent";
 import UnderLineComponent from "../Utilites/UnderLineComponent";
-import db from '../../config/firebase'
+import  { FirebaseContext } from '../Firebase'
+
 import "firebase/auth";
-import App from './testLogin'
+
 const LoginPage = () => {
 
-    const [form, setForm] = useState({ loginEmail: "", loginPass: "" });
-  const [user, setUser] = useState({ loggedIn: false });
-  useEffect(() => authListener(),[]);
-  
-  const authListener=()=>{
-    db.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setUser({ user });
-      } else {
-        setUser({ user: null });
-      }
-    });
-  }
-  
-    const handleOnChangeInput = (e) => {
-      const { name, value } = e.target;
-      setForm((prevState) => {
-        return { ...prevState, [name]: value };
-      });
-    };
-
-    const handleLogin = (e) => {
-      e.preventDefault();
-      db.auth()
-        .signInWithEmailAndPassword(form.loginEmail, form.loginPass)
-        .then((u) => {})
-        .catch((error) => {
-          console.log(error);
-        });
-    };
   return (
     <div className="login">
       <div className="login-container">
         <UnderLineComponent text="Zaloguj się" />
         <div className="login-wraper">
-          <form className="login-form" onSubmit={handleLogin}>
+          <form className="login-form">
             <label htmlFor="loginEmail">Email</label>
-            <input
-              name="loginEmail"
-              onChange={handleOnChangeInput}
-              value={form.loginEmail}
-              type="email"
-            />
+            <input name="loginEmail" type="email" />
             <label htmlFor="loginPass">Hasło</label>
-            <input
-              name="loginPass"
-              type="password"
-              onChange={handleOnChangeInput}
-              value={form.loginPass}
-            />
+            <input name="loginPass" type="password" />
             <button type="submit">Zaloguj</button>
           </form>
         </div>
@@ -64,9 +25,13 @@ const LoginPage = () => {
           <Link to="/register">
             <ButtonComponent buttonText="Załuż konto" />
           </Link>
-         <App/>
         </div>
       </div>
+      <FirebaseContext.Consumer>
+        {(firebase) => {
+          return <div>I've access to Firebase and render something.</div>;
+        }}
+      </FirebaseContext.Consumer>
     </div>
   );
 };
