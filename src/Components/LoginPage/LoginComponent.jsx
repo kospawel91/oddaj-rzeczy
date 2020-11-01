@@ -1,29 +1,27 @@
 import React, { useState } from "react";
-import firebase from "../Firebase/firebase";
-import { Redirect, Link } from "react-router-dom";
-import { Auth } from "../Firebase/context";
+import { Link, Redirect } from "react-router-dom";
+import ButtonComponent from "../Utilites/ButtonComponent";
 import UnderLineComponent from "../Utilites/UnderLineComponent";
+import firebase from "../Firebase/firebase";
+import { Auth } from "../Firebase/context";
 
-const SignUpForm = () => {
+const LoginComponent = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordTwo, setPasswordTwo] = useState("");
-
   const [routeRedirect, setRouteRedirect] = useState(false);
+
   const { state, dispatch } = React.useContext(Auth);
 
-  const signin = async (e) => {
-    console.log(state);
+  const login = async (e) => {
     e.preventDefault();
-
-    let response = await firebase.signin(email, password);
+    let response = await firebase.login(email, password);
     if (response.hasOwnProperty("message")) {
       console.log(response.message);
     } else {
-      console.log(response.user);
+      //console.log(response.user);
       setRouteRedirect(true);
       return dispatch({
-        type: "SIGNIN",
+        type: "LOGIN",
         payload: response.user,
       });
     }
@@ -33,45 +31,37 @@ const SignUpForm = () => {
   if (redirect) {
     return <Redirect to="/" />;
   }
-  const isInvalid = password !== passwordTwo || password === "" || email === "";
 
   return (
     <div className="login">
       <div className="login-container">
-        <UnderLineComponent text="Zarejestruj się" />
-        <form className="login-form" onSubmit={signin}>
+        <UnderLineComponent text="Zaloguj się" />
+
+        <form className="login-form" onSubmit={login}>
           <div className="login-wraper">
-            <label htmlFor="enauk">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label htmlFor="passwordOne">Hasło</label>
+            <label htmlFor="password">Hasło</label>
             <input
               name="password"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <label htmlFor="passwordTwo">Powtórz hasło</label>
-            <input
-              name="passwordTwo"
-              type="password"
-              onChange={(e) => setPasswordTwo(e.target.value)}
-            />
           </div>
+
           <div className="login-pagebuttons">
-            <Link to="/login">
-              <button className="btn">Zaloguj</button>
+            <Link to="/register">
+              <div className="btn">Załuż konto</div>
             </Link>
-            <button
-              className="btn"
-              disabled={isInvalid}
-              value="Create account"
-              type="submit"
-            >
-              Załuz konto
-            </button>
+            <>
+              <button type="submit" className="btn">
+                Zaloguj
+              </button>
+            </>
           </div>
         </form>
       </div>
@@ -79,4 +69,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default LoginComponent;

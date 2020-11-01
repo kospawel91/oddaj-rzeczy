@@ -51,3 +51,10 @@ input:focus {
   outline: none;
   border-bottom: 1px solid $baseDgray-color;
 }
+
+#root{
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      position: relative;
+}

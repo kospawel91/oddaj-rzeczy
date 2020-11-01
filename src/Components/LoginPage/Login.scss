@@ -1,12 +1,17 @@
 .login{
-    display: flex;
+        display: flex;
     justify-content: center;
-    height: 80vh;
+    flex: 1;
+    align-items: center;
  
     &-wraper{
         background-color: $baseLight-color;
         padding: 3rem;
-        margin: 5rem;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        
         & .underline-h1{
             font-size: 4rem;
             font-weight: 500;
@@ -15,27 +20,29 @@
         }
     }
     &-container{
-        width: 60vw;
+        width: 100%;
         max-width: 600px;
     }
     &-pagebuttons{
         display: flex;
         justify-content: space-between;
+        width: 100%;
         
-       & .button-text{
-           width:15rem;
+       & .btn{
            font-size: 2rem;
            font-weight: 500;
            white-space: nowrap;
            padding:2rem;
-        &:first-child{
-            border: none;
-        }
+           border: 1px solid transparent;
+           &:hover {
+               border:solid 1px $baseDgray-color;
+           }
        } 
     }
     &-form{
     display: flex;
     flex-direction: column;
+    align-items: center;
     & label{
         margin-bottom: 2rem;
         font-size: 2rem;
