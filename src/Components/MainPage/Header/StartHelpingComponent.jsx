@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonComponent from '../../Utilites/ButtonComponent';
 import UnderLineComponent from '../../Utilites/UnderLineComponent';
+import * as ROUTES from "../../../constants/routes";
 
 const StartHelpingComponent = () => {
 
@@ -12,10 +13,17 @@ const StartHelpingComponent = () => {
 Oddaj niechciane rzeczy w zaufane ręce`}
         />
         <div className="button-wrapper">
-          <ButtonComponent buttonText={`ODDAJ 
-          RZECZY`} />
-          <ButtonComponent buttonText={`ZORGANIZUJ 
-          ZBIÓRKĘ`} />
+          <ButtonComponent
+            route={
+              ROUTES.GIVE_AWAY
+            }
+            buttonText={`ODDAJ 
+          RZECZY`}
+          />
+          <ButtonComponent
+            buttonText={`ZORGANIZUJ 
+          ZBIÓRKĘ`}
+          />
         </div>
       </div>
     );

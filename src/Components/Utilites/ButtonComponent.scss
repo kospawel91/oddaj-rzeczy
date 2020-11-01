@@ -1,14 +1,25 @@
 .button-text{
+     width: 300px;
+     color:$baseDgray-color;
+     &:hover{
+         background-color:lighten($baseLgray-color,30%) ;
+        transition: background-color 0.5s ease-out;
+         color:$baseLight-color ;
+     }
+     
+}
+.btn{
     display: flex;
     justify-content: center;
     align-items: center;
     color:$baseDgray-color;
     font-weight: 300;
-    width: 300px;
+   
     background-color: transparent;
     border:solid 1px $baseDgray-color;
     padding:2rem;
     font-size: 3.6rem;
     text-transform: uppercase;
     text-align: center;
+         
 }

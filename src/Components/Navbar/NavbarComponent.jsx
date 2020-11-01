@@ -35,10 +35,11 @@ const NavbarComponent = () => {
             smooth={true}
             offset={-105}
             duration={500}
+            className="no-active"
           >
             {el.name}
-          
-        </NavLink></li>
+          </NavLink>
+        </li>
       ))}
     </ul>
   );

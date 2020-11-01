@@ -3,7 +3,7 @@ import FooterComponent from './FooterComponent';
 
 const Footer = () => {
     return (
-      <footer className="footer">
+      <footer className="footer cont" >
         <FooterComponent />
       </footer>
     );

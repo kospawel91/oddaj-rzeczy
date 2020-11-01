@@ -4,7 +4,7 @@ import NavbarComponent from "./NavbarComponent";
 
 const Navbar = () => {
     return (
-      <section className="nav">
+      <section className="nav cont">
         <div className="navBack">
           <LoginComponent />
           <NavbarComponent />

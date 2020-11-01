@@ -1,6 +1,7 @@
-import app from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/auth";
-
+import "firebase/firestore";
+import "firebase/storage";
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -12,21 +13,129 @@ const config = {
   appId: "1:288979098170:web:86c1c639dc72f096fef303",
   measurementId: "G-2SE488KVTL",
 };
-class Firebase {
-  constructor() {
-    app.initializeApp(config);
-    this.auth = app.auth();
-  }
-  // *** Auth API ***
+class Firebase{
+    constructor(){
+        firebase.initializeApp(config);
+        this.auth = firebase.auth();
+        this.db = firebase.firestore();
+        this.storage = firebase.storage();
+    }
 
-  doCreateUserWithEmailAndPassword = (email, password) =>
-    this.auth.createUserWithEmailAndPassword(email, password);
+    //login
+    async login(email, password){
+        const user = await firebase.auth().signInWithEmailAndPassword(email, password).catch(err => {
+            console.log(err);
+            return err;
+        });
+        return user;
+    }
 
-  doSignInWithEmailAndPassword = (email, password) =>
-    this.auth.signInWithEmailAndPassword(email, password);
+    //signin
+    async signin(email, password){
+        const user = await firebase.auth().createUserWithEmailAndPassword(email, password).catch(err => {
+            console.log(err);
+            return err;
+        });
+        return user;
+    }
 
-  doSignOut = () => this.auth.signOut();
+    //logout
+    async logout(){
+        const logout = await firebase.auth().signOut().catch(err => {
+            console.log(err);
+            return err;
+        });
+        return logout;
+    }
+
+
+    async getUserState(){
+        return new Promise(resolve=> {
+            this.auth.onAuthStateChanged(resolve);
+        });
+    }
+
+    async getPosts(){
+        let postsArray = [];
+        const posts = await firebase.firestore().collection("Posts").get();
+        posts.forEach(doc => {
+            postsArray.push({id:doc.id, data: doc.data()});
+        });
+        return postsArray;
+    }
+
+
+    async getPost(postid){
+        const post = await firebase.firestore().collection("Posts").doc(postid).get();
+        const postData = post.data();
+        return postData;
+    }
+
+
+   async createPost(url, post){
+   
+    const fileRef = await firebase.storage().refFromURL(url);
+
+    let newPost = {
+        title: post.title,
+        content: post.content,
+        cover: url,
+        fileref : fileRef.location.path 
+    } 
+
+    
+    const firestorePost = await firebase.firestore().collection("Posts").add(newPost).catch(err => {
+        console.log(err);
+    });
+    
+    return firestorePost;
+  
+   }
+
+  
+   async updatePost(url, postid, postData){
+      if(postData["cover"]){
+
+        const fileRef = await firebase.storage().refFromURL(url);
+
+        await this.storage.ref().child(postData["oldcover"]).delete().catch(err => {
+            console.log(err);
+        });
+
+        let updatedPost = {
+            title: postData.title,
+            content: postData.content,
+            cover: url,
+            fileref : fileRef.location.path
+        }
+
+        const post = await firebase.firestore().collection("Posts").doc(postid).set(updatedPost, {merge: true}).catch(err => {
+            console.log(err);
+        });
+        return post;
+      }else{
+        const post = await firebase.firestore().collection("Posts").doc(postid).set(postData, {merge: true}).catch(err => {
+            console.log(err);
+        });
+        return post
+      }
+   }
+
+
+   async deletePost(postid, fileref){
+        const storageRef = firebase.storage().ref();
+        await storageRef.child(fileref).delete().catch(err => {
+            console.log(err);
+        });
+        console.log("Image Deleted");
+        const post = await firebase.firestore().collection("Posts").doc(postid).delete().catch(err => {
+            console.log(err);
+        });
+        console.log("Post Deleted");
+
+        return post;
+    }
+
 }
 
-
-export default Firebase;
+export default new Firebase();

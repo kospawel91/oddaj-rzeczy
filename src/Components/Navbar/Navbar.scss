@@ -1,60 +1,69 @@
- .nav{
-      display: flex;
-      flex-direction: column;
-  margin-right: 10rem;;
-      position: sticky;
-      top: 0rem;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      z-index: 29;
-    }
-//  .navBack{
-//    position: relative;
-//    &::after{
-//       content: "";
-//       position: absolute;
-//       top: -30px;
-//       right: -10rem;
-//       opacity: 0.2;
-//       background-color: grey; 
-//       height: 105px; 
-//       width: 120%;
-//     }
-//  }
-.login-buttons {
-    display: flex;
-    justify-content: flex-end;
-    &-item {
-      padding: 0.5rem;
-      font-size: 1.4rem;
-      &:last-child {
-        margin-left: 1rem;
-        border: 1px solid $baseLgray-color;
-      }
-    }
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-
+.navBack {
+  position: relative;
+  width: 90%;
+  //  &::after{
+  //     content: "";
+  //     position: absolute;
+  //     top: -30px;
+  //     right: -10rem;
+  //     opacity: 0.2;
+  //     background-color: grey;
+  //     height: 105px;
+  //     width: 120%;
+  //   }
+}
+.login-buttons {
+  display: flex;
+  justify-content: flex-end;
+  &-item {
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    &:last-child {
+      margin: 1rem;
+      margin-right: 2rem;
+    }
+  }
+}
+.sign-b {
+  border: 1px solid $baseLgray-color;
+}
 .navbar {
-    display: flex;
-    justify-content: flex-end;
-    &-item  {
-      padding: 1rem 3rem;
-      white-space: nowrap;
+  display: flex;
+  // position: fixed;
+  // top:0;
+  // right: 0;
+  justify-content: flex-end;
+  &-item {
+    margin: 1rem;
+    white-space: nowrap;
+    padding: 1rem;
 
-      & .active {
-        border: solid 1px $baseDgray-color;
-        padding: 1rem;
-      }
-      &:last-child {
-        padding-right: 0;
-      }
-   
-    & a{
+    & .active {
+      border: solid 1px $baseDgray-color;
+    }
 
+    & a {
       font-size: $fSizeM;
       white-space: nowrap;
-      
+      padding: 1rem;
+      &:hover {
+        border: 1px solid $baseDgray-color;
+      }
     }
-   }
+  }
 }
-  
+.no-active {
+  border: solid 1px transparent;
+}
