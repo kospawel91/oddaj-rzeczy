@@ -3,17 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { AuthProvider } from "./Components/Firebase/context";
-import { HashRouter } from 'react-router-dom';
+import { AuthProvider,StepContext } from "./Components/Firebase/context";
+import { BrowserRouter } from "react-router-dom";
 
 
 ReactDOM.render(
-  <HashRouter>
+  <BrowserRouter>
     <AuthProvider>
-      <App />
+      <StepContext>
+        <App />
+      </StepContext>
     </AuthProvider>
-  </HashRouter>
-  ,
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
