@@ -11,6 +11,7 @@
   &-organization{
       height: 100%;
   }
+  
   &-organization-input{
       width: 100%;
       max-width:570px;
@@ -51,6 +52,7 @@
       border: 1px solid #3C3C3C;
       background-color:NONE;
       margin-bottom: 10px;
+      font-size: 2rem;
     }
     & input[type="checkbox"]:checked + label {
       border: 1px solid #3C3C3C;
@@ -58,4 +60,10 @@
       background-color:  #fad648;
     }
   }
+}
+
+
+.list-location{
+  width: 25rem;
+  right: 0;
 }

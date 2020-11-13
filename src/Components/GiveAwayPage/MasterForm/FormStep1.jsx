@@ -14,6 +14,7 @@ const FormStep1 = () => {
       ...checkedItems,
       [event.target.name]: event.target.checked,
     });
+  setUserData({ ...userData, [event.target.name]: event.target.checked });
     
   };
     return (
@@ -25,7 +26,7 @@ const FormStep1 = () => {
               <label className="checkbox-container" key={item.key}>
                 {item.label}
                 <Checkbox
-                  
+
                   name={item.name}
                   checked={checkedItems[item.name]}
                   onChange={handleChange}

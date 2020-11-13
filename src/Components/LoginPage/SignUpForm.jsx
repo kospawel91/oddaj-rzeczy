@@ -70,7 +70,7 @@ const SignUpForm = () => {
               value="Create account"
               type="submit"
             >
-              Załuz konto
+              Załóz konto
             </button>
           </div>
         </form>

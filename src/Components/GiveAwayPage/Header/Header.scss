@@ -33,6 +33,11 @@
   flex-wrap: nowrap;
   height: 100%;
   padding: 0 7rem;
+  &-h1{
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    align-self: center;
+  }
 }
 .button-wrapper {
   display: flex;
@@ -76,3 +81,4 @@
     background:lighten(#c3c3c3, 20%) ;
   }
 }
+

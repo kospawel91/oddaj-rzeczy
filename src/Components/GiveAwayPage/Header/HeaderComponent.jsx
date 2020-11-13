@@ -20,7 +20,7 @@ const HeaderComponent = () => {
         text={`Zacznij pomagać!
 Oddaj niechciane rzeczy w zaufane ręce`}
       />
-      <h1>Wystarczą 4 proste kroki:</h1>
+      <h1 className="helping-h1">Wystarczą 4 proste kroki:</h1>
       <div className="content">
         <div className="squares">
           {squares.map((item) => (

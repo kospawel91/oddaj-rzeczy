@@ -57,10 +57,10 @@
   }
   &-btn{
     align-self: flex-start;
-    margin-bottom: 3rem 0;
+    margin-bottom: 3rem ;
     margin-right: 3rem;
     font-size: 2rem;
-    width: 13rem;
+    min-width: 13rem;
   }
   &-form{
     display: flex;

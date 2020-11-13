@@ -1,0 +1,19 @@
+.pagination {
+  &-contener {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-list {
+    display: flex;
+  }
+  &-item {
+    padding: 1rem;
+    border: solid 1px black;
+    margin:1rem;
+    
+  }
+  &-link{
+     font-size: 2.4rem; 
+  }
+}

@@ -3,7 +3,7 @@ import { MultiStepContext } from "../../Firebase/context";
 import { useContext, useState } from "react";
 import { checkBoxWho} from "./data";
 import Checkbox from "./Checkbox";
-// import "./formStep3.scss";
+import "./formStep3.scss";
 const FormStep3 = () => {
   const { setStep, userData, setUserData } = useContext(MultiStepContext);
   const location = ["Poznan", "Warszawa", "Kraków", "Wrocław", "Katowice"];
@@ -15,6 +15,7 @@ const FormStep3 = () => {
 
   const onOptionClicked = (value) => () => {
     setSelectedOption(value);
+    setUserData({...userData,"Town":value})
     setIsOpen(false);
     
   };
@@ -24,6 +25,8 @@ const FormStep3 = () => {
        ...checked,
        [event.target.name]: event.target.checked,
      });
+     setUserData({ ...userData, [event.target.name]: event.target.checked });
+
    };
 
   return (
@@ -33,21 +36,20 @@ const FormStep3 = () => {
         <div className="check-things-options">
           <div className="check-things-choose step3" onClick={toggling}>
             {selectedOption || "--wybierz--"}
+            <div class={isOpen ? "arrow rotated" : "arrow"}></div>
           </div>
           {isOpen && (
-            <div>
-              <ul className="check-things-options-list">
-                {location.map((option) => (
-                  <li
-                    className="list-item"
-                    onClick={onOptionClicked(option)}
-                    key={Math.random()}
-                  >
-                    {option}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="check-things-options-list list-location">
+              {location.map((option) => (
+                <li
+                  className="list-item"
+                  onClick={onOptionClicked(option)}
+                  key={Math.random()}
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       </div>

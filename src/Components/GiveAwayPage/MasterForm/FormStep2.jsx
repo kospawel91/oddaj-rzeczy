@@ -15,8 +15,12 @@ const FormStep2 = () => {
 
   const onOptionClicked = (value) => () => {
     setSelectedOption(value);
+    setUserData({
+      ...userData,
+      "numberOfBags":value,
+    });
     setIsOpen(false);
-    console.log(selectedOption);
+
   };
 
   

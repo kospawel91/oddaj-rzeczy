@@ -8,6 +8,7 @@ const InputKurier = ({
   return (
     <>
       <input
+        className="kurier-input"
         type={type}
         id={name}
         name={name}
