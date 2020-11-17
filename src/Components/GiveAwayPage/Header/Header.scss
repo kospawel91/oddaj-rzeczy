@@ -1,6 +1,6 @@
 .give-away-header {
   display: flex;
-  height: 95vh;
+  height: 100vh;
   flex-wrap: wrap-reverse;
   &-left {
     flex: 1;
@@ -18,16 +18,13 @@
   }
 }
 
-li {
-  list-style: none;
-}
 .header-right {
   display: flex;
   flex-direction: column;
   &_wrapper {
     padding: 3rem 15rem;
   }
-  }
+}
 
 .helping {
   display: flex;
@@ -36,10 +33,52 @@ li {
   flex-wrap: nowrap;
   height: 100%;
   padding: 0 7rem;
-  
+  &-h1{
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    align-self: center;
+  }
 }
 .button-wrapper {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.square-1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 1rem;
+
+  & span {
+    z-index: 2;
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    transform: rotate(45deg);
+  }
+}
+
+.giveaway {
+  & .squares {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.square-active {
+  z-index: 1;
+  &::before {
+    background:lighten(#c3c3c3, 20%) ;
+  }
+}
 

@@ -1,32 +1,16 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 
-const OrganizationDataComponent = () => {
-    const data = [
-      {
-        title: "Zbiórka LoremIpsum",
-        text: "lasdasdfasdgfgdfshadsfasdfdsfghadfad",
-        things: "ubrania, monitory",
-      },
-      {
-        title: "Zbiórka LoremIpsum2",
-        text: "lasdasdfasdgfgdfshadsfasdfdsfghadfad",
-        things: "ubrania, monitory",
-      },
-      {
-        title: "Zbiórka LoremIpsum3",
-        text: "lasdasdfasdgfgdfshadsfasdfdsfghadfad",
-        things: "ubrania, monitory",
-      },
-    ];
+const OrganizationDataComponent = ({date}) => {
+ 
     return (
       <div className="organization-data">
         <ul className="organization-data-list">
-          {data.map((el, i) => {
+          {date.map((el, i) => {
             return (
               <li key={i} className="organization-data-list-item">
                 <div className="list-item-left">
-                  <h1>{el.title}</h1>
-                  <p>{el.text}</p>
+                  <h1>{el.name}</h1>
+                  <p>{el.desc}</p>
                 </div>
                 <div className="list-item-right">
                   <p>{el.things}</p>

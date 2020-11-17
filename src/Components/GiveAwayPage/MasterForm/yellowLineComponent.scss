@@ -1,0 +1,13 @@
+.import-yellow-bar{
+    padding: 4rem 6rem;
+    background-color:  #fad648;
+    &-h1{
+        font-size: 3.6rem;
+        font-weight: 600;
+        padding-bottom: 2rem;
+    }
+    &-text{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}

@@ -44,9 +44,13 @@ a:active {
 html {
   box-sizing: border-box;
 }
+textarea{
+  resize: none;
 
+}
 textarea:focus,
 input:focus {
+  
   border: none;
   outline: none;
   border-bottom: 1px solid $baseDgray-color;
@@ -58,3 +62,4 @@ input:focus {
       height: 100vh;
       position: relative;
 }
+

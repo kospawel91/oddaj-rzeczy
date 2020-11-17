@@ -55,7 +55,7 @@ const LoginComponent = () => {
 
           <div className="login-pagebuttons">
             <Link to="/register">
-              <div className="btn">Załuż konto</div>
+              <div className="btn">Załóż konto</div>
             </Link>
             <>
               <button type="submit" className="btn">
